@@ -1,0 +1,7 @@
+https://cloud.marxist.space {
+  log stdout
+  proxy / localhost:8080 {
+    websocket
+    transparent
+  }
+}

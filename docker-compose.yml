@@ -6,11 +6,10 @@ services:
     ports:
       - 8080:8080
       - 33060:33060
-      - 443:443
-      - 80:80
     environment:
-      - CELLS_BIND=cloud.marxist.space:443
-      - CELLS_EXTERNAL=https://cloud.marxist.space:443
+      - CELLS_BIND=cloud.marxist.space:8080
+      - CELLS_EXTERNAL=http://cloud.marxist.space:8080
+      - CELLS_NO_TLS=1
     volumes:
       - ./cellsdir:/var/cells
       - ./data:/var/cells/data
@@ -34,4 +33,3 @@ services:
       - 9980:9980
     environment:
       domain: 'cloud\.marxist\.space'
-      extra_params: 'o:tls.enable=false'
