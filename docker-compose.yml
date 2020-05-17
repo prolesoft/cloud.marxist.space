@@ -1,0 +1,37 @@
+version: "3"
+services:
+  cells:
+    image: pydio/cells:latest
+    restart: always
+    ports:
+      - 8080:8080
+      - 33060:33060
+      - 443:443
+      - 80:80
+    environment:
+      - CELLS_BIND=cloud.marxist.space:443
+      - CELLS_EXTERNAL=https://cloud.marxist.space:443
+    volumes:
+      - ./cellsdir:/var/cells
+      - ./data:/var/cells/data
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+      - 32769:32769
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: REDACTED
+      MYSQL_DATABASE: cells
+      MYSQL_USER: pydio
+      MYSQL_PASSWORD: REDACTED
+    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
+    volumes:
+      - ./cellsdir:/var/cells
+  code:
+    image: collabora/code
+    ports:
+      - 9980:9980
+    environment:
+      domain: 'cloud\.marxist\.space'
+      extra_params: 'o:tls.enable=false'
