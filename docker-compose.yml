@@ -8,7 +8,7 @@ services:
       - 33060:33060
     environment:
       - CELLS_BIND=cloud.marxist.space:8080
-      - CELLS_EXTERNAL=http://cloud.marxist.space:8080
+      - CELLS_EXTERNAL=https://cloud.marxist.space
       - CELLS_NO_TLS=1
     volumes:
       - ./cellsdir:/var/cells
