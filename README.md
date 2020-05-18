@@ -1,4 +1,4 @@
-# pydio-config
+# cloud.marxist.space
 
 Our Pydio server config
 
