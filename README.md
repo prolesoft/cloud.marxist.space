@@ -6,7 +6,7 @@ Our Pydio server config
 
 * [Install Docker](https://docs.docker.com/engine/install/ubuntu/)
 * Put these files in `/root/cells` (or wherever)
-* Install Caddy v1
+* Install Caddy v1: https://github.com/caddyserver/caddy/releases/tag/v1.0.4
 * `docker-compose up -d`
 * `./caddy.sh`
 * Open <https://cloud.marxist.space> and allow the self-signed cert
