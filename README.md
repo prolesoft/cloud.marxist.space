@@ -4,7 +4,6 @@ Our Nextcloud server config
 
 ## How To
 
-* `apt-get update && apt-get install -y docker.io`
 * Do [this](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-nextcloud-on-ubuntu-20-04)
 * Configure:
   * Install all the apps that look good
